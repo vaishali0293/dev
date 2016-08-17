@@ -1,0 +1,136 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script  src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="new.js"></script>
+    <link rel="stylesheet" href="homec.css">
+
+</head>
+<body ng-app="myApp">
+<div class="home" ng-controller='customerCtrl'>
+    <h1>    YOUR SHOPPING BAG </h1>
+    <table class="table" >
+        <thead>
+        <tr>
+            <th>{{productsInCart.length}} Items</th>
+            <th>Size</th>
+            <th>Quantity</th>
+            <th>Price</th>
+
+        </tr>
+        </thead>
+        <tbody ng-repeat="product in productsInCart">
+        <td>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img ng-src="img/T{{product.p_id}}.jpg" ng-click="abc(product.p_id)" data-toggle="modal" data-target="#myModal" />
+                        </div>
+                        <div class="col-sm-9">
+                            <h4> {{product.p_variation | uppercase}} {{product.p_name | uppercase}}</h4>
+                            <p>Style #: {{product.p_style | uppercase}}</p>
+                            <p>Color: {{product.p_selected_color.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span></span>
+        </td>
+        <td>{{product.p_selected_size.code}}</td>
+        <td><input class="wid" type="number" ng-model="product.p_quantity" ></td>
+        <td>{{product.c_currency}} {{product.p_price}}</td>
+
+
+        </tbody>
+    </table>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h4> {{modal_data.p_variation | uppercase}} {{modal_data.p_name | uppercase}}</h4>
+                                    <p>Style #: {{modal_data.p_style | uppercase}}</p>
+                                    <p>Color: {{modal_data.p_selected_color.name}}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img ng-src="img/T{{modal_data.p_id}}.jpg"/>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row border1">
+            <div class="col-sm-3" style="padding-top: 60px!important">
+                <h4 >Need Help <br> Or Have Question ?</h4>
+
+                <h5>Call Custumer Service at<br>
+                    1-800-555-5555</h5>
+
+                <p style="margin-bottom: 0px!important"><u>Chat with one of </u></p>
+                <p><u>Our Stttylists</u></p>
+
+                <p style="margin-bottom: 0px!important"> <u> See Return</u></p>
+                <p><u>& Exchange Policy</u></p>
+
+            </div>
+
+            <div class="col-sm-8" style="padding-top: 60px!important">
+                <div class="row border2">
+                    <div class="col-sm-6" style="padding-top: 15px!important">
+                        <p class="font1" style="margin-bottom: 0px!important">ENTER PROMOTION CODE</p>
+                        <p class="font1">OR GIFT CARD</p>
+                    </div>
+                    <div class="col-sm-6" style="padding-top: 15px!important">
+                        <span><input type="text" name="value"> <button type="button" class="btn btn-danger">APPLY</button></span>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h4>SUBTOTAL:</h4>
+                            </div>
+                            <div class="col-sm-4" >
+                                <h4 style="float: right!important"> $ {{total_val}}</h4>
+                                ;;;;;;;;;;;  {{discount}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    ==============={{total_val}}===========================
+</div>
+
+</div>
+
+</body>
+
+</html>

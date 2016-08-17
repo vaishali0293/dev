@@ -1,0 +1,86 @@
+.ms-mb-x{
+    margin-bottom:30px;
+}
+.ms-mt-x{
+    margin-top:30px;
+}
+.ms-fs-20{
+    font-size:20px
+}
+.ms-fs-22{
+    font-size:22px
+}
+.border-top-1{
+    border-top:1px solid grey;;
+}
+.m-pt-10{
+    padding-top:10px;
+}
+.ms-pb-10{
+padding-bottom:10px;
+}
+.ms-pl-0{
+    padding-left:0px;
+}
+.ms-pl-m{
+    padding-left:15px;
+}
+.ms-pr-m{
+    padding-right:15px;
+}
+.ms-pl-0{
+    padding-right:0px;
+}
+.ms-pl-5{
+    padding-left:5px;
+}
+.ms-pl-10{
+    padding-left:10px;
+}
+.ms-pr-5{
+    padding-right:5px;
+}
+.ms-pr-10{
+    padding-right:10px;
+}
+.bordered-color{
+    margin:5px;
+    height:4px;
+    background-color:#cccccc;
+}
+.ms-mt-10{
+    margin-top:10px;
+}
+.ms-mt-m{
+    margin-top:15px;
+}
+.ms-mt-l{
+    margin-top:20px;
+}
+.ms-mb-m{
+    margin-bottom:15px;
+}
+.ms-mb-l{
+    margin-bottom:20px;
+}
+.grey{
+    color:grey !important
+}
+.ms-mt-50{
+    margin-top:50px !important
+}
+.ms-br-zero{
+    border-radius:0px
+}
+.ms-bg-zero{
+    background-color:transparent
+}
+a,a:hover{
+    text-decoration:none !important
+}
+.ms-text-cap{
+    text-transform: capitalize;
+}
+.ms-td{
+    text-decoration:underline;
+}

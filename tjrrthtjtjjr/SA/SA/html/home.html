@@ -1,0 +1,612 @@
+<div class="hidden-xs container-fluid">
+    <div class="col-sm-12">
+        <div class="row shopping-bag">
+            <div class="col-sm-12">
+                <h2 class="">YOUR SHOPPING BAG</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr style="margin:5px ;">
+            </div>
+        </div>
+
+        <div class="row product-table m-pt-10 ms-pb-10">
+
+            <div class="col-sm-6 ">
+                <b class="head ms-pl-5">
+                    {{products.length}}&nbsp;ITEMS
+                </b>
+            </div>
+            <div class="col-sm-2">
+                <b class="head">
+                    SIZE
+                </b>
+            </div>
+            <div class="col-sm-2">
+                <b class="head">
+                    QTY
+                </b>
+            </div>
+            <div class="col-sm-2">
+                <b class="head">
+                    PRICE
+                </b>
+            </div>
+            <!-- <table class="table table-responsive table-bordered">
+                 <thead>
+                 <tr>
+                     <td>
+                      Items
+                     </td>
+                     <td>
+                      Si
+                     </td>
+                     <td>
+
+                     </td>
+                 </tr>
+                 </tbody>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <td></td>
+                     <td></td>
+                     <td>
+
+                     </td>
+                 </tr>
+                 </tbody>
+             </table>-->
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr class="bordered-color">
+            </div>
+        </div>
+        <div class="row product-table  ms-mb-l" ng-repeat="product in products">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-5">
+
+                        <div ng-if="$index==0" class="">
+                            <img src="assets/images/T1.jpg" class="img-responsive" sap-modal href="" ng-click="showProductModal(product)">
+                        </div>
+                        <div ng-if="$index==1" class="">
+                            <img src="assets/images/T2.jpg" class="img-responsive" sap-modal href="" ng-click="showProductModal(product)">
+                        </div>
+                        <div ng-if="$index==2" class="">
+                            <img src="assets/images/T3.jpg" class="img-responsive" sap-modal href="" ng-click="showProductModal(product)">
+                        </div>
+                        <div ng-if="$index==3" class="">
+                            <img src="assets/images/T4.jpg" class="img-responsive" sap-modal href="" ng-click="showProductModal(product)">
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-7">
+                        <h4 class="product.p_name ">{{product.p_name|uppercase}}</h4>
+
+                        <p class="sku grey ms-text-cap">Style:&nbsp;{{product.p_style}}</p>
+
+                        <p class="colour grey ms-text-cap">Colour:&nbsp;{{product.p_selected_color.name}}</p>
+
+                        <div class="ms-mt-50">
+                            <ul class="list-inline list-unstyled">
+                                <li>
+                                    <a class="grey ms-bg-zero ms-br-zero" >
+                                        EDIT
+                                    </a>
+                                </li>
+                                <li class="ms-pl-0 ms-pr-0 grey">|</li>
+                                <li class="grey">
+                                    <a class="grey ms-bg-zero ms-br-zero" href="">
+                                        REMOVE
+                                    </a></li>
+                                <li class="ms-pl-0 ms-pr-0">|</li>
+                                <li class="ms-pl-0 ms-pr-0">
+                                    <a class="grey ms-bg-zero ms-br-zero" href="">
+                                        SAVE FOR LATER
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="ms-mt-m ms-mb-m">
+                    <p class="colour grey">{{product.p_selected_size.code|uppercase}}</p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="ms-mt-m ms-mb-m">
+                    <input type="number" class="form-control" ng-model="product.p_quantity"
+                           style="width:70px;border-radius:0px">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="ms-mt-l ms-mb-m">
+                    <p class="colour grey">${{product.p_price|number:2}}</p>
+                </div>
+            </div>
+            <!--<table class="table table-responsive table-bordered">
+                <thead>
+                <tr>
+                    <td>
+                        Items
+                    </td>
+                    <td>
+                        Si
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+                </thead>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>-->
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr class="bordered-color ms-mb-l">
+            </div>
+        </div>
+        <div class="row ms-mt-m">
+            <div class="col-sm-5">
+                <b class="help">
+                    Need help<br>or have question ?
+                </b>
+
+                <p class="grey ms-mt-m ms-mb-m ">
+                    Call Customer Service at<br>
+                    1-800-555-5555
+                </p>
+
+                <p class="grey ms-mt-m ms-mb-m ms-td">
+                    Chat with one of<br> our stylists
+                </p>
+
+                <p class="grey ms-mt-m ms-mb-m ms-td ">
+                    See returnt<br>
+                    & exchange policy
+                </p>
+            </div>
+            <div class="col-sm-7">
+                <div class="row ms-pl-m">
+                    <div class="col-sm-4">
+                        <div class=" ms-mb-m">
+                            <b class="grey" style="font-size:14px">ENTER PROMOTION CODE<br>OR GIFT CARD TO APPLY</b>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div clas="ms-mt-m ms-mb-m pull-right">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+
+                                    <div class="input-group">
+
+                                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="">
+
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-default ms-br-zero">APPLY</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr class="bordered-color ms-mb-l">
+                    </div>
+                </div>
+                <div class="row ms-pl-m ms-pr-m">
+                    <div class="col-sm-12">
+                        <ul class="list-inline list-unstyled">
+                            <li class="pull-left">
+                                <div class="ms-mt-m ms-mb-m">
+                                    <b>SUBTOTAL</b>
+                                </div>
+                            </li>
+                            <li class="pull-right">
+                                <div class="ms-mt-m ms-mb-m">
+                                    <b>${{products[0].p_price+products[1].p_price+products[2].p_price+products[3].p_price|number:2}}</b>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="row ms-pl-m ms-pr-m">
+                    <div class="col-sm-12">
+                        <ul class="list-inline list-unstyled">
+                            <li class="pull-left">
+                                <div class="ms-mt-m ms-mb-m">
+                                    <b>PROMOTION CODE JF10 APPLIED</b>
+                                </div>
+                            </li>
+                            <li class="pull-right">
+                                <div class="ms-mt-m ms-mb-m">
+                                    <b>- &nbsp;$7.00</b>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="row ms-pl-m ms-pr-m">
+                    <div class="col-sm-12">
+                        <ul class="list-inline list-unstyled">
+                            <li class="pull-left">
+                                <div class="ms-mt-m ms-mb-m">
+                                    <b>ESTIMATED SHIPPING*</b>
+
+                                    <p class="grey">
+                                        you qualify for free shipping<br>because your order is below
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="pull-right">
+                                <div class="ms-mt-m ms-mb-m">
+                                    <b>FREE</b></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr style="margin:5px ;">
+                    </div>
+                </div>
+                <div class="row ms-pl-m ms-pr-m">
+                    <div class="col-sm-12">
+                        <ul class="list-inline list-unstyled">
+                            <li class="pull-left">
+                                <div class="ms-mt-m ms-mb-m">
+                                    <b>ESTIMATED TOTAL*</b>
+
+                                    <p class="grey">
+                                        tax will be applied during checkout
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="pull-right">
+                                <div class="ms-mt-m ms-mb-m">
+                                    <b>$30.00</b></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr class="bordered-color ms-mb-l">
+                    </div>
+                </div>
+                <div class="row ms-pl-m ms-pr-m">
+                    <div class="col-sm-12">
+                        <ul class="list-inline list-unstyled pull-right">
+                            <li class="">
+                                <div class="ms-mt-10 ms-mb-m">
+                                    <a class="grey" href="" style="text-decoration:underline !important">CONTINUE
+                                        SHOPPING</a>
+                                </div>
+                            </li>
+                            <li class="pull-right">
+                                <button class="btn btn-primary ms-br-zero">CHECKOUT</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="row ms-pl-m ms-pr-m">
+                    <div class="col-sm-12">
+                        <ul class="list-inline list-unstyled pull-right">
+                            <li class="">
+                                <div class="ms-mt-10 ms-mb-m">
+                                    <img src="assets/images/lock.jpg" class="img-responsive"
+                                         style="max-width:50px;display:inline-block">
+                                    <span class="grey" style="display:inline-block">Secure checkout,Shopping is always secure</span>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="hidden-sm hidden-md hidden-lg container-fluid">
+    <div class="">
+        <div class="row shopping-bag ms-mb-x ms-mt-x">
+            <div class="col-xs-8">
+                <h4 class=" " style="margin:0px">YOUR SHOPPING BAG</h4>
+            </div>
+            <div class="col-xs-4">
+                <div class="pull-right">
+                    <b class="head ms-pl-5">
+                        {{products.length}}&nbsp;ITEMS
+                    </b>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <hr class="bordered-color">
+            </div>
+        </div>
+        <div class="row product-table ms-mt-x ms-mb-l" ng-repeat="product in products">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-5">
+
+                        <div ng-if="$index==0" class="">
+                            <img src="assets/images/T1.jpg" class="img-responsive">
+                        </div>
+                        <div ng-if="$index==1" class="">
+                            <img src="assets/images/T2.jpg" class="img-responsive">
+                        </div>
+                        <div ng-if="$index==2" class="">
+                            <img src="assets/images/T3.jpg" class="img-responsive">
+                        </div>
+                        <div ng-if="$index==3" class="">
+                            <img src="assets/images/T4.jpg" class="img-responsive">
+                        </div>
+
+
+                    </div>
+                    <div class="col-xs-7">
+                        <h4 class="product.p_name ">{{product.p_name|uppercase}}</h4>
+
+                        <p class="sku grey ms-text-cap">Style:&nbsp;{{product.p_style}}</p>
+
+                        <p class="colour grey ms-text-cap">Colour:&nbsp;{{product.p_selected_color.name}}</p>
+
+                        <div class="ms-mt-m ms-mb-m">
+                            <p class="colour grey ms-text-cap">Size: {{product.p_selected_size.code|uppercase}}</p>
+                        </div>
+                        <div class="ms-mt-m ms-mb-m">
+                            <b class="grey" style="display:inline-block">QTY:</b>
+
+                            <div style="display:inline-block"><input type="number" class="form-control"
+                                                                     ng-model="product.p_quantity"
+                                                                     style="width:70px;border-radius:0px">
+                            </div>
+                        </div>
+                        <div class="ms-mt-l ms-mb-m">
+                            <p class="colour  ms-fs-22">${{product.p_price|number:2}}</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                        <div class="ms-mt-50">
+                            <ul class="list-inline list-unstyled">
+                                <li>
+                                    <a class="grey ms-bg-zero ms-br-zero" href="" data-toggle="modal"
+                                       data-target=".bs-example-modal-lg">
+                                        EDIT
+                                    </a></li>
+                                <li class="ms-pl-0 ms-pr-0 grey">|</li>
+                                <li class="grey">
+                                    <a class="grey ms-bg-zero ms-br-zero" href="">
+                                        REMOVE
+                                    </a></li>
+                                <li class="ms-pl-0 ms-pr-0">|</li>
+                                <li class="ms-pl-0 ms-pr-0">
+                                    <a class="grey ms-bg-zero ms-br-zero" href="">
+                                        SAVE FOR LATER
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row" ng-if="!$last">
+                    <div class="col-sm-12">
+                        <hr style="margin:5px ;">
+                    </div>
+                </div>
+            </div>
+
+            <!--<table class="table table-responsive table-bordered">
+                <thead>
+                <tr>
+                    <td>
+                        Items
+                    </td>
+                    <td>
+                        Si
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+                </thead>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>-->
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr class="bordered-color ms-mb-l">
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-xs-12 text-center">
+                <div class=" ms-mb-m text-center">
+                    <b class="grey" style="font-size:14px">ENTER PROMOTION CODE<br>OR GIFT CARD TO APPLY</b>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12  ">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+
+                        <div class="input-group ms-br-zero">
+
+                            <input type="text" class="form-control ms-br-zero" id="exampleInputAmount" placeholder="">
+
+                            <div class="input-group-addon ms-br-zero">APPLY</div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr style="margin:5px ;">
+            </div>
+        </div>
+        <div class="row ms-pl-m ms-pr-m">
+            <div class="col-sm-12">
+                <ul class="list-inline list-unstyled">
+                    <li class="pull-left">
+                        <div class="ms-mt-m ms-mb-m">
+                            <b>SUBTOTAL</b>
+                        </div>
+                    </li>
+                    <li class="pull-right">
+                        <div class="ms-mt-m ms-mb-m">
+                            <b>${{products[0].p_price+products[1].p_price+products[2].p_price+products[3].p_price|number:2}}</b>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row ms-pl-m ms-pr-m">
+            <div class="col-sm-12">
+                <ul class="list-inline list-unstyled">
+                    <li class="pull-left">
+                        <div class="ms-mt-m ms-mb-m">
+                            <b>PROMOTION CODE JF10 APPLIED</b>
+                        </div>
+                    </li>
+                    <li class="pull-right">
+                        <div class="ms-mt-m ms-mb-m">
+                            <b>- &nbsp;$7.00</b>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row ms-pl-m ms-pr-m">
+            <div class="col-sm-12">
+                <ul class="list-inline list-unstyled">
+                    <li class="pull-left">
+                        <div class="ms-mt-m ms-mb-m">
+                            <b>ESTIMATED SHIPPING*</b>
+
+                            <p class="grey">
+                                you qualify for free shipping<br>because your order is below
+                            </p>
+                        </div>
+                    </li>
+                    <li class="pull-right">
+                        <div class="ms-mt-m ms-mb-m">
+                            <b>FREE</b></div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr style="margin:5px ;">
+            </div>
+        </div>
+        <div class="row ms-pl-m ms-pr-m">
+            <div class="col-sm-12">
+                <ul class="list-inline list-unstyled">
+                    <li class="pull-left">
+                        <div class="ms-mt-m ms-mb-m">
+                            <b>ESTIMATED TOTAL*</b>
+
+                            <p class="grey">
+                                tax will be applied during checkout
+                            </p>
+                        </div>
+                    </li>
+                    <li class="pull-right">
+                        <div class="ms-mt-m ms-mb-m">
+                            <b>$30.00</b></div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr class="bordered-color ms-mb-l">
+            </div>
+        </div>
+        <div class="row ms-pl-m ms-pr-m">
+            <div class="col-xs-12">
+                <ul class=" list-unstyled ">
+                    <li class="">
+                        <button class="btn btn-primary ms-br-zero btn-block">CHECKOUT</button>
+                    </li>
+                    <li class="text-center">
+                        <div class="ms-mt-10 ms-mb-m">
+                            <a class="grey" href="" style="text-decoration:underline !important">CONTINUE SHOPPING</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="row ms-pl-m ms-pr-m">
+            <div class="col-sm-12">
+                <ul class=" list-unstyled ">
+                    <li class="">
+                        <div class="ms-mt-10 ms-mb-m">
+                            <span class="grey" style="">Secure checkout,Shopping is always secure</span>
+                            <img src="assets/images/lock.jpg" class="img-responsive text-center"
+                                 style="max-width:50px;">
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
